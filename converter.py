@@ -35,18 +35,23 @@ while True:
 
     elif choice == '3':
         decimal_string = input("input decimal: ")
+        lsit = []
         number_li = decimal_string.split()
         for i in range(len(number_li)):
             number_li[i] = int(number_li[i])
         for number in number_li:
             char = chr(number)
-            print("Character of ASCII value", number, "is ", char)
+            temp_var = char
+            lsit.append(char)
+        lsit = lsit
+        lsit = ''.join(map(str, lsit))
+        print(lsit)
 
     elif choice == '4':
         octal_string = input('input octal: ')
         print(octal_to_string(octal_string))
 
     elif choice == '5':
-        base = input('input base64 here')
+        base = input('input base64 here: ')
         decode = base64.b64decode(base).decode('UTF-8')
         print(decode)
